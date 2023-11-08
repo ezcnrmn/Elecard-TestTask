@@ -6,7 +6,7 @@ import Loading from '../Loading';
 import { getSortImageFunction } from '../../utils/sortImages';
 import { imageSortBasis, imageViewType } from '../../utils/consts';
 import Details from '../Details';
-import { imageToTreeReducer, imageTreeRender } from '../../utils/imageTree';
+import { imageTreeRender } from '../../utils/imageTree';
 import Pagination from '../Pagination';
 import './Gallery.scss';
 
@@ -25,17 +25,11 @@ const Gallery = () => {
 		return filtered;
 	}, [images, deleted, sort]);
 
-	const imageTree = useMemo(() => {
-		const tree = images.reduce(imageToTreeReducer, {});
-
-		return tree;
-	}, [images]);
-
 	if (loading) return <Loading />;
 
 	return viewType === imageViewType.tree ? (
 		<div className="gallery-tree">
-			<Details title="Root">{imageTreeRender(imageTree)}</Details>
+			<Details title="Root">{imageTreeRender(images)}</Details>
 		</div>
 	) : (
 		<div className="gallery-cards">
