@@ -1,0 +1,57 @@
+.loading {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+
+	&__dot {
+		width: 20px;
+		height: 20px;
+		margin-inline: 6px;
+
+		border-radius: 50%;
+		background-color: #000;
+
+		&--1 {
+			animation: rising-1 3s ease infinite;
+		}
+
+		&--2 {
+			animation: rising-2 3s ease infinite;
+		}
+
+		&--3 {
+			animation: rising-3 3s ease infinite;
+		}
+	}
+}
+
+@keyframes rising-1 {
+	0%,
+	20% {
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 1;
+	}
+}
+@keyframes rising-2 {
+	0%,
+	40% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: 1;
+	}
+}
+@keyframes rising-3 {
+	0%,
+	60% {
+		opacity: 0;
+	}
+
+	80% {
+		opacity: 1;
+	}
+}

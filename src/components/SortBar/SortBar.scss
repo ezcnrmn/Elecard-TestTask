@@ -1,0 +1,15 @@
+.sort-bar {
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+
+		&--left {
+			margin-inline-start: auto;
+			align-items: end;
+		}
+	}
+}

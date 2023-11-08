@@ -1,0 +1,40 @@
+* {
+	font-family: sans-serif;
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.app {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	background-color: #ddd;
+}
+
+.header {
+	padding: 5px 15px;
+}
+
+.main {
+	flex-grow: 1;
+	overflow-y: auto;
+}
+
+.footer {
+	padding: 5px 15px;
+}
+
+.vertical-container > * + * {
+	margin-block-start: 5px;
+}
+.horizontal-container > * + * {
+	margin-inline-start: 5px;
+}

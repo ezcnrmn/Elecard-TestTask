@@ -1,0 +1,24 @@
+.pagination-bar {
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+
+	&__button {
+		width: 40px;
+		padding: 5px 0;
+
+		border: 1px solid #000;
+		margin-inline: 1px;
+
+		&--current {
+			background-color: #ccc;
+		}
+		&--first {
+			margin-inline-end: 10px;
+		}
+		&--last {
+			margin-inline-start: 10px;
+		}
+	}
+}

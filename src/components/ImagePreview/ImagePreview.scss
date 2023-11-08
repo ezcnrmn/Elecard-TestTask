@@ -1,0 +1,24 @@
+.image-preview {
+	display: flex;
+	align-items: center;
+
+	&__thumbnail {
+		height: 30px;
+		width: 30px;
+		object-fit: cover;
+
+		cursor: pointer;
+	}
+
+	&__date {
+		margin-inline-start: 10px;
+	}
+
+	&__size {
+		margin-inline-start: 10px;
+	}
+
+	&__image {
+		max-width: 100vw;
+	}
+}

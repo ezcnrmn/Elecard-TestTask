@@ -1,0 +1,24 @@
+.details {
+	&__title {
+		display: flex;
+		cursor: pointer;
+	}
+
+	&__title::before {
+		content: '+';
+		display: block;
+		text-align: center;
+		width: 20px;
+		height: 20px;
+		margin-inline-end: 18px;
+		border: 1px solid;
+	}
+	&[open] > &__title::before {
+		content: '–';
+	}
+
+	&__content {
+		margin-block-start: 10px;
+		margin-inline-start: 40px;
+	}
+}
