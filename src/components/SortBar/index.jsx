@@ -3,10 +3,11 @@ import { useDispatch } from 'react-redux';
 import { gallerySlice } from '../../store/reducers/galleryReducer';
 import { getDeleted, resetDeleted as resetDeletedInLS } from '../../utils/localStorage';
 import { imageViewType, imageSortBasis, imageSortDirection } from '../../utils/consts';
+import classNames from 'classnames';
 import './SortBar.scss';
 
 const SortBar = () => {
-	const [sortBasis, setSortBasisState] = useState(imageSortBasis.none);
+	const [sortBasis, setSortBasisState] = useState(imageSortBasis.category);
 	const [sortDirection, setSortDirectionState] = useState(imageSortDirection.ascend);
 	const [viewType, setViewTypeState] = useState(imageViewType.cards);
 
@@ -42,10 +43,9 @@ const SortBar = () => {
 
 	return (
 		<div className="sort-bar">
-			<label className="sort-bar__item">
+			<label className={classNames('sort-bar__item', { 'sort-bar__item--hidden': viewType === imageViewType.tree })}>
 				<span>Сортировка</span>
 				<select name="sortBasis" onChange={handleSortBasis} value={sortBasis}>
-					<option value={imageSortBasis.none}>Нет</option>
 					<option value={imageSortBasis.category}>По категории</option>
 					<option value={imageSortBasis.timestamp}>По дате</option>
 					<option value={imageSortBasis.name}>По названию файла</option>
@@ -53,7 +53,7 @@ const SortBar = () => {
 				</select>
 			</label>
 
-			<div className="sort-bar__item">
+			<div className={classNames('sort-bar__item', { 'sort-bar__item--hidden': viewType === imageViewType.tree })}>
 				<label>
 					<input
 						type="radio"
@@ -76,9 +76,14 @@ const SortBar = () => {
 				</label>
 			</div>
 
-			<button onClick={handleReset}>Вернуть</button>
+			<button
+				className={classNames({ 'sort-bar__item--hidden': viewType === imageViewType.tree })}
+				onClick={handleReset}
+			>
+				Вернуть
+			</button>
 
-			<div className="sort-bar__item sort-bar__item--left">
+			<div className={classNames('sort-bar__item', 'sort-bar__item--right')}>
 				<label>
 					Карточки
 					<input

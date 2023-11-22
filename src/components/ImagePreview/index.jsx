@@ -18,10 +18,12 @@ const ImagePreview = ({ image }) => {
 					onClick={showModal}
 				/>
 
-				<div className="image-preview__date" title="Дата создания">
+				<div className="image-preview__date" title="Дата">
+					<strong>Дата: </strong>
 					{formatTimestamp(image.timestamp)}
 				</div>
 				<div className="image-preview__size" title="Размер файла">
+					<strong>Размер файла: </strong>
 					{bytesToKB(image.filesize)}
 				</div>
 			</div>

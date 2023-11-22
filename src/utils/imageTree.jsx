@@ -1,6 +1,5 @@
 import Details from '../components/Details';
 import ImagePreview from '../components/ImagePreview';
-import Pagination from '../components/Pagination';
 
 export const imageToTreeReducer = (acc, image) => {
 	if (!(image.category in acc)) acc[image.category] = [];
@@ -13,11 +12,9 @@ export const imageTreeRender = (images) => {
 	if (Array.isArray(images))
 		return (
 			<div className="vertical-container">
-				<Pagination pageSize={50}>
-					{images.map((image) => (
-						<ImagePreview key={image.image} image={image} />
-					))}
-				</Pagination>
+				{images.map((image) => (
+					<ImagePreview key={image.image} image={image} />
+				))}
 			</div>
 		);
 

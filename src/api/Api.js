@@ -11,15 +11,6 @@ class Api {
 	async get(url) {
 		return await this.request(url, 'GET');
 	}
-	async post(url, body) {
-		return await this.request(url, 'POST', body);
-	}
-	async put(url, body) {
-		return await this.request(url, 'PUT', body);
-	}
-	async delete(url) {
-		return await this.request(url, 'DELETE');
-	}
 }
 
 export default new Api();

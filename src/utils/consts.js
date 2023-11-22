@@ -6,7 +6,6 @@ export const imageViewType = { cards: 'cards', tree: 'tree' };
 
 export const imageSortDirection = { descend: 'descend', ascend: 'ascend' };
 export const imageSortBasis = {
-	none: 'none',
 	timestamp: 'timestamp',
 	category: 'category',
 	filesize: 'filesize',

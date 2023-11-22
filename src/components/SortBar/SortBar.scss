@@ -7,7 +7,11 @@
 		display: flex;
 		flex-direction: column;
 
-		&--left {
+		&--hidden {
+			visibility: hidden;
+		}
+
+		&--right {
 			margin-inline-start: auto;
 			align-items: end;
 		}

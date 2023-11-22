@@ -3,8 +3,8 @@ import { bytesToKB, formatTimestamp, getImageName } from '../../utils/formatImag
 import { useDispatch } from 'react-redux';
 import { gallerySlice } from '../../store/reducers/galleryReducer';
 import { API_BASE } from '../../utils/consts';
-import './ImageCard.scss';
 import { addDeleted } from '../../utils/localStorage';
+import './ImageCard.scss';
 
 const ImageCard = ({ image }) => {
 	const { deleteImage } = gallerySlice.actions;
@@ -35,10 +35,18 @@ const ImageCard = ({ image }) => {
 			/>
 
 			<div className="image-card__description">
-				<div>{getImageName(image.image)}</div>
-				<div>Категория: {image.category}</div>
-				<div title="Дата создания">{formatTimestamp(image.timestamp)}</div>
-				<div title="Размер файла">{bytesToKB(image.filesize)}</div>
+				<div>
+					<strong>Название:</strong> {getImageName(image.image)}
+				</div>
+				<div>
+					<strong>Категория:</strong> {image.category}
+				</div>
+				<div title="Дата">
+					<strong>Дата:</strong> {formatTimestamp(image.timestamp)}
+				</div>
+				<div title="Размер файла">
+					<strong>Размер файла:</strong> {bytesToKB(image.filesize)}
+				</div>
 			</div>
 		</div>
 	);
